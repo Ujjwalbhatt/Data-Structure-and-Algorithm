@@ -1,0 +1,1 @@
+ cout << "Move disk " << n << " from "

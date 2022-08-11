@@ -1,34 +1,17 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-class Solution
+ 
+void swap(int& first, int& second)
 {
-public:
-    int sum = 0;
-    int sum2 = 0;
-    int MissingNumber(vector<int> &array, int n)
-    {
-        for (int i = 0; i < n-1; i++)
-        {
-            sum = sum + array[i];
-        }
-        sum2 = (n * (n + 1)) / 2;
-        return (sum2 - sum);
-    }
-};
+    int temp = first;
+    first = second;
+    second = temp;
+}
+ 
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int n;
-        cin >> n;
-
-        vector<int> array(n - 1);
-        for (int i = 0; i < n - 1; ++i)
-            cin >> array[i];
-        Solution obj;
-        cout << obj.MissingNumber(array, n) << "\n";
-    }
+    int a = 2, b = 3;
+    swap(a, b);
+    cout << a << " " << b;
     return 0;
 }
