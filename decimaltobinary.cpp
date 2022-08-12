@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 long binary(int n){
-       static long biNo,r,fctor = 1;
+       static long biNo=0,r,fctor = 1;
 
     if(n != 0)
     {
@@ -19,10 +19,6 @@ int main()
     cout<<"Enter the number: ";
     cin>>n;
     bin=binary(n);
-    cout<<"Binary of number is: "<<bin;
-
-
-
-    
+    cout<<"Binary of number is: "<<bin;   
     return 0;
 }
