@@ -26,7 +26,7 @@ int main()
     return 0;
 }
 
-int binarySearch(int arr1[], int n, int md, int low, int hg)
+int binarySearch(int arr1[],  int n, int md, int low, int hg)
 {
     int mid, c = 0;
     if (low <= hg) 
