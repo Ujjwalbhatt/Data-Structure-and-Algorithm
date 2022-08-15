@@ -1,48 +1,54 @@
-#include <stdio.h>
-int binarySearch(int*, int, int, int, int);
-
+#include<iostream>
+using namespace std;
+void print(int arr[],int s,int e){
+    for (int i = s; i < e; i++)
+    {
+        cout<<arr[i]<<" ";
+        
+    }cout<<endl;
+    
+}
+bool binary(int *arr,int s,int e,int key)
+{
+    cout<<endl;
+    print(arr,s,e);
+    cout<<endl;
+    if(s>e){
+        return false;
+    }
+    int mid=s+(e-s)/2;  
+    cout<<"Value of mid in arrays: "<<mid<<endl;
+    if (arr[mid]==key)
+    {
+        return true;
+    }
+    if(arr[mid]>key){
+        return binary(arr,s,mid-1,key);
+    }
+    else{
+        return binary(arr,mid+1,e,key); 
+    }
+}
 int main()
 {
-    int arr1[10], i, n, md, c, low, hg;
-
-    printf("\n\n Recursion : Binary searching :\n");
-    printf("-----------------------------------\n");
-    printf(" Input the number of elements to store in the array :");
-    scanf("%d", &n);
-    printf(" Input %d numbers of elements in the array in ascending order :\n", n);
-    for (i = 0; i < n; i++) 
+    int key,n;
+    cout<<"Enter the range of the arrays";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter the element of the arrays: ";
+    for (int i = 0; i < n; i++)
     {
-        printf(" element - %d : ", i);
-        scanf("%d", &arr1[i]);
+        cin>>arr[i];
     }
-    printf(" Input the number to search : ");
-    scanf("%d", &md);
-    low = 0, hg = n - 1;
-    c = binarySearch(arr1, n, md, low, hg);
-    if (c == 0)
-        printf(" The search number not exists in the array.\n\n");
-    else
-        printf(" The search number found in the array.\n\n");
+    
+    cout<<"Enter the element to be searched in the arrays: ";
+    cin>>key;
+    bool ans=binary(arr,0,n,key);
+    if(ans){
+        cout<<"Element found";
+    }
+    else{
+        cout<<"Element not found ";
+    }
     return 0;
-}
-
-int binarySearch(int arr1[],  int n, int md, int low, int hg)
-{
-    int mid, c = 0;
-    if (low <= hg) 
-    {
-        mid = (low + hg) / 2;
-        if (md == arr1[mid]) 
-        {
-            c = 1;
-        }
-        else if (md < arr1[mid]) 
-        {
-            return binarySearch(arr1, n, md, low, mid - 1);
-        }
-        else
-            return binarySearch(arr1, n, md, mid + 1, hg);
-    }
-    else
-        return c;
 }
