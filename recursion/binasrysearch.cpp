@@ -38,7 +38,7 @@ int binarySearch(int arr1[],  int n, int md, int low, int hg)
         }
         else if (md < arr1[mid]) 
         {
-            return binarySearch(arr1, n, md, low, mid - 1);rf
+            return binarySearch(arr1, n, md, low, mid - 1);
         }
         else
             return binarySearch(arr1, n, md, mid + 1, hg);
