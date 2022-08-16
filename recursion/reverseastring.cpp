@@ -1,47 +1,20 @@
-// To reverse a string using recursion
 #include <iostream>
-#include <string.h>
-int n;
 using namespace std;
-// void rev(char *st){
-
-//         if(n>=0){
-//             cout<<st[n];
-//             n--;
-//             rev(st);
-
-//         }
-// }
-// or
-char *rev(char str[])
+void reverse(string& str, int i, int j)
 {
-    static int i;
-    static char revstr[100];
-    if (*str)
+    if (i > j)
     {
-        rev(str + 1);
-        revstr[i++] = *str;
+        return;
     }
-    return revstr;
+    swap(str[i], str[j]);
+    i++;
+    j--;
+    reverse(str, i, j);
 }
-// int main()
-// {
-//     char st[100];
-//     cin>>st;
-//     n=strlen(st);
-
-//     rev(st);
-//     return 0;
-// }
-
-// OR
-
 int main()
 {
-    char str[100];
-    char *revstr;
-    cin >> str;
-    revstr = rev(str);
-    cout<<revstr;
+    string name = "Ujjwal";
+    reverse(name, 0,name.length()-1);
+    cout<<name<<endl;
     return 0;
 }
