@@ -1,28 +1,32 @@
-#include<iostream>
-#include<string.h>
+#include <iostream>
 using namespace std;
-
-void palindrome(char str[],int i){
-    int len=strlen(str)-(i+1);
-    if(str[i]==str[len]){
-        if(i+1==len || i==len){
-            cout<<"Entered string is palindrome!";
-            return;
-        }
-        else{
-            palindrome(str,i+1);
-        }
+bool checkpalindrome(string ch, int i)
+{
+    int n=ch.length();
+    if (i > n-i-1)
+        return true;
+    if (ch[i] != ch[n-i-1])
+    {
+        return false;
     }
-        else{
-            cout<<"Entered string is not palindrome!";
-        }
-
+    else
+    {
+        return checkpalindrome(ch, i + 1);
+    }
 }
 int main()
 {
- char str[100];
- cout<<"Enter the string : ";
- cin>>str;
- palindrome(str,0);
+    string ch;
+    cout<<"Enter the string to check for palindrome: ";
+    cin>>ch;
+    bool ispalindrome = checkpalindrome(ch, 0);
+    if (ispalindrome)
+    {
+        cout << "Its a palindrome!" << endl;
+    }
+    else
+    {
+        cout << "Its not a palindrome" << endl;
+    }
     return 0;
 }

@@ -2,7 +2,7 @@
 
 void printArray(int *A, int n)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i <= n; i++)
     {
         printf("%d ", A[i]);
     }
@@ -22,7 +22,6 @@ int partition(int A[], int low, int high)
         {
             i++;
         }
-
         while (A[j] > pivot)
         {
             j--;
@@ -40,6 +39,8 @@ int partition(int A[], int low, int high)
     temp = A[low];
     A[low] = A[j];
     A[j] = temp;
+    printArray(A, high);
+    printf("j = %d\n",j);
     return j;
 }
 
@@ -60,10 +61,10 @@ int main()
 
     int A[] = {9, 4, 4, 8, 7, 5, 6};
 
-    int n = 9;
-    n = 7;
-    printArray(A, n);
+    int n = 7;
+  
+    printArray(A, n-1);
     quickSort(A, 0, n - 1);
-    printArray(A, n);
+    printArray(A, n-1);
     return 0;
 }
