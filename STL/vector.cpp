@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     vector<int> a(5,1);
-    vector<int> last(a);//this copies all the element of the vecto a in vector last 
+    vector<int> last(a);//this copies all the element of the vector a in vector last 
 
     //  cout<<"printing the vector a: ";
      cout<<"printing the vector last :  ";
