@@ -8,14 +8,14 @@ class Hero
     // properties
 private:
     int health;
-
+  
 public:
     char *name;
     char level;
     static int timeToComplete;
 
     Hero()
-    {
+    {fhfghtfg
         cout << "Simple constructor called" << endl;
         name = new char[100];gfhgh
     }
