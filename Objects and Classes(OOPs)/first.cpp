@@ -15,9 +15,9 @@ public:
     static int timeToComplete;
 
     Hero()
-    {fhfghtfg
+    {
         cout << "Simple constructor called" << endl;
-        name = new char[100];gfhgh
+        name = new char[100];
     }
 
     // Paramerterised Constructor
