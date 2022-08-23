@@ -1,1 +1,2 @@
- cout << "Move disk " << n << " from "
+
+    for (int i = 0; i < n; i++)

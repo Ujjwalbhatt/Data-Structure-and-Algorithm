@@ -2,15 +2,15 @@
 using namespace std;
 void print(int arr[], int s, int e)
 {
-    for (int i = s; i < e; i++)
+    for (int i = s; i <= e; i++)
     {
         cout << arr[i] << " ";
     }
-    cout << endl;
+    
 }
 bool binary(int *arr, int s, int e, int key)
 {
-    cout << endl;
+   
     print(arr, s, e);
     cout << endl;
     if (s > e)
@@ -35,7 +35,7 @@ bool binary(int *arr, int s, int e, int key)
 int main()
 {
     int key, n;
-    cout << "Enter the range of the arrays";
+    cout << "Enter the range of the arrays: ";
     cin >> n;
     int arr[n];
     cout << "Enter the element of the arrays: ";
@@ -46,7 +46,7 @@ int main()
 
     cout << "Enter the element to be searched in the arrays: ";
     cin >> key;
-    bool ans = binary(arr, 0, n, key);
+    bool ans = binary(arr, 0, n-1, key);
     if (ans)
     {
         cout << "Element found";
