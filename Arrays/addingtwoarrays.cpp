@@ -46,7 +46,7 @@ vector<int> findArraySum(vector<int> &a, int n, vector<int> &b, int m)
     }
     while (carry != 0)
     {
-        int sum = b[j] + carry;
+        int sum = carry;
         carry = sum / 10;
         sum = sum % 10;
         ans.push_back(sum);
