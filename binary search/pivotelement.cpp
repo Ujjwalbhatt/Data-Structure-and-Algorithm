@@ -1,6 +1,7 @@
 //to find the pivot element index in a rotated sorted array
 #include<iostream>
 using namespace std;
+
 int getpivot(int arr[],int n){
     int s=0;
     int e=n-1;
@@ -19,7 +20,7 @@ int getpivot(int arr[],int n){
 }
 int main(){
     int arr[9]={5, 6, 7, 8, 9, 10, 1, 2, 3};
-    int pivot=getpivot(arr,7);
+    int pivot=getpivot(arr,9);
     cout<<"Pivot element is "<<arr[pivot]<<endl;
     cout<<"Pivot index is "<<pivot<<endl;
     return 0;
